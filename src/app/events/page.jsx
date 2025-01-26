@@ -2,6 +2,7 @@ import { connectToDb } from "@/lib/db";
 import React from "react";
 import { Event } from "@/lib/models";
 import Link from "next/link";
+import DOMPurify from "isomorphic-dompurify";
 
 const EventsPage = async () => {
   await connectToDb();
@@ -78,7 +79,7 @@ const EventsPage = async () => {
                   </div>
                 ))
               ) : (
-                <h1 className="text-white text-center text-lg w-full">
+                <h1 className="text-white text-center w-full">
                   No upcoming events available
                 </h1>
               )}
@@ -135,7 +136,7 @@ const EventsPage = async () => {
                   </div>
                 ))
               ) : (
-                <h1 className="text-white text-lg text-center w-full">
+                <h1 className="text-white text-center w-full">
                   No past events available
                 </h1>
               )}
